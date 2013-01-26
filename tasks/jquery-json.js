@@ -1,35 +1,47 @@
 module.exports = function (grunt) {
   'use strict';
 
+      // Required and optional package manifest fields as defined by the jQuery
+      // Plugin Registry: http://plugins.jquery.com/docs/package-manifest/
   var fields = {
         required: ['name', 'version', 'title', 'author', 'licenses', 'dependencies'],
         optional: ['description', 'keywords', 'homepage', 'docs', 'demo', 'download', 'bugs', 'maintainers']
       },
+      // Check whether a field is required in the package manifest.
       isFieldRequired = function (field) {
         return fields.required.indexOf(field) >= 0;
       },
+      // Check whether a field is optional in the package manifest.
       isFieldOptional = function (field) {
         return fields.optional.indexOf(field) >= 0;
       },
+      // Check whether a field is used in the package manifest.
       isField = function (field) {
         return isFieldRequired(field) || isFieldOptional(field);
       },
+      // Remove any form of 'jquery' from the beginning of the name, as
+      // recommended by the jQuery Plugin Registry.
       removeJqueryFromName = function (name) {
         return name.replace(/^jquery[\-. ]?/i, '');
       },
+      // Get the package manifest file name to write to.
       jsonFileName = function (name) {
         return name + '.jquery.json';
       },
-      isObjectObject = function (value) {
-        return Object.prototype.toString.call(value) === '[object Object]';
+      // Check whether a variable is a true object.
+      isObjectObject = function (variable) {
+        return Object.prototype.toString.call(variable) === '[object Object]';
       };
 
+  // Task that generates a jquery.json file from package.json.
   grunt.registerTask('jquery-json', 'Generates a jquery.json file from package.json.', function () {
     this.requiresConfig('pkg');
 
     grunt.helper('write-jquery-json', grunt.config('pkg'), grunt.config('jquery-json'));
   });
 
+  // Helper that returns the package manifest as an object. Uses a combination
+  // of package.json and 'jquery-json' config values.
   grunt.registerHelper('get-jquery-json', function (pkg, config) {
     var jqueryJson = {};
 
@@ -50,12 +62,13 @@ module.exports = function (grunt) {
       });
     }
 
-    // Remove any form of 'jquery' from the name, as recommended.
+    // Remove any form of 'jquery' from the beginning of the name.
     jqueryJson.name = removeJqueryFromName(jqueryJson.name);
 
     return jqueryJson;
   });
 
+  // Helper that writes the package manifest to the jquery.json file.
   grunt.registerHelper('write-jquery-json', function (pkg, config) {
     var jqueryJson = grunt.helper('get-jquery-json', pkg, config),
         fileName = jsonFileName(jqueryJson.name);
