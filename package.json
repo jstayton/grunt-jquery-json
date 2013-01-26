@@ -1,0 +1,43 @@
+{
+  "name": "grunt-jquery-json",
+  "version": "0.1.0",
+  "description": "Generates a jquery.json file from package.json for the jQuery Plugin Registry.",
+  "keywords": [
+    "gruntplugin",
+    "jquery",
+    "plugin",
+    "registry",
+    "jquery.json",
+    "package.json",
+    "pkg"
+  ],
+  "homepage": "https://github.com/jstayton/grunt-jquery-json",
+  "author": {
+    "name": "Justin Stayton",
+    "url": "http://justinstayton.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jstayton/grunt-jquery-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jstayton/grunt-jquery-json/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jstayton/grunt-jquery-json/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "bin": "bin/grunt-jquery-json",
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
