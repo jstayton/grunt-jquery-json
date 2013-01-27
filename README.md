@@ -1,6 +1,6 @@
 # grunt-jquery-json
 
-Generates a jquery.json file from package.json for the jQuery Plugin Registry.
+Generates jquery.json file from package.json for the jQuery Plugin Registry.
 
 ## Getting Started
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with:

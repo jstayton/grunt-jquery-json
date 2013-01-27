@@ -1,7 +1,7 @@
 /*!
  * grunt-jquery-json v0.1.0
  *
- * Generates a jquery.json file from package.json for the jQuery Plugin Registry.
+ * Generates jquery.json file from package.json for the jQuery Plugin Registry.
  *
  * https://github.com/jstayton/grunt-jquery-json
  *
