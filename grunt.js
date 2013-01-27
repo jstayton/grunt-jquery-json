@@ -3,11 +3,30 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: '<json:package.json>',
+    meta: {
+      banner: '/*!\n' +
+              ' * <%= pkg.name %> v<%= pkg.version %>\n' +
+              ' *\n' +
+              ' * <%= pkg.description %>\n' +
+              ' *\n' +
+              ' * <%= pkg.homepage %>\n' +
+              ' *\n' +
+              ' * Copyright <%= grunt.template.today("yyyy") %> by <%= pkg.author.name %>\n' +
+              ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n' +
+              ' */'
+    },
+    concat: {
+      tasks: {
+        src: ['<banner>', '<file_strip_banner:tasks/jquery-json.js:block>'],
+        dest: 'tasks/jquery-json.js',
+        separator: ''
+      }
+    },
     lint: {
-      files: ['grunt.js', 'tasks/*.js'] // test/*.js
+      files: ['grunt.js', 'tasks/*/*.js'] // test/*.js
     },
     test: {
-      files: ['test/*.js']
+      files: ['test/*/*.js']
     },
     watch: {
       files: '<config:lint.files>',
@@ -46,7 +65,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', 'lint'); // test
+  grunt.registerTask('default', 'lint concat'); // test
 
   grunt.loadTasks('tasks');
 };
