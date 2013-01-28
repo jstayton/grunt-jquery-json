@@ -1,7 +1,7 @@
 {
   "name": "grunt-jquery-json",
   "version": "0.1.0",
-  "description": "Generates jquery.json file from package.json for the jQuery Plugin Registry.",
+  "description": "Grunt plugin that generates a jquery.json manifest file from package.json.",
   "keywords": [
     "gruntplugin",
     "jquery",
