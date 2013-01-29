@@ -1,0 +1,36 @@
+{
+  "name": "jquery-testplugin",
+  "version": "1.2.3",
+  "title": "jQuery Test Plugin",
+  "author": {
+    "name": "Test Author"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.4.3"
+  },
+  "description": "A jQuery plugin for testing.",
+  "keywords": [
+    "jquery",
+    "test",
+    "plugin"
+  ],
+  "homepage": "https://github.com/tauthor/jquery-testplugin",
+  "docs": "https://github.com/tauthor/jquery-testplugin/blob/master/README.md",
+  "demo": "http://tauthor.github.com/jquery-testplugin",
+  "download": "http://tauthor.github.com/jquery-testplugin/latest.zip",
+  "bugs": "https://github.com/tauthor/jquery-testplugin/issues",
+  "maintainers": [
+    {
+      "name": "Test Maintainer",
+      "email": "test@jquerymaintainer.net",
+      "url": "http://jquerymaintainer.net"
+    }
+  ],
+  "unused": "field"
+}
