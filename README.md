@@ -5,6 +5,8 @@ grunt-jquery-json
 from package.json. jquery.json manifest files are used by the
 [jQuery Plugin Registry](http://plugins.jquery.com) to identify jQuery plugins.
 
+*   [Release Notes](https://github.com/jstayton/grunt-jquery-json/wiki/Release-Notes)
+
 Requirements
 ------------
 
