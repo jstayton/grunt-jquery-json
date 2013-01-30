@@ -7,6 +7,8 @@
     "jquery",
     "plugin",
     "registry",
+    "package",
+    "manifest",
     "jquery.json",
     "package.json",
     "pkg"
