@@ -1,6 +1,8 @@
 grunt-jquery-json
 =================
 
+[![Build Status](https://travis-ci.org/jstayton/grunt-jquery-json.png?branch=master)](https://travis-ci.org/jstayton/grunt-jquery-json)
+
 [Grunt](http://gruntjs.com) plugin that generates a jquery.json manifest file
 from package.json. jquery.json manifest files are used by the
 [jQuery Plugin Registry](http://plugins.jquery.com) to identify jQuery plugins.
