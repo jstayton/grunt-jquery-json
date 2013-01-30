@@ -33,15 +33,26 @@ And, optionally, add it to the `default` task (or any other):
 Getting Started
 ---------------
 
-Run the following `grunt` command in the same directory as your project's
-`grunt.js` file:
+To start, make sure your `grunt.js` file has a `pkg` config object that has
+loaded `package.json`:
+
+    grunt.initConfig({
+      pkg: '<json:package.json>',
+      ...
+    });
+
+This is a standard Grunt practice, and `grunt-jquery-json` uses this `pkg`
+config object to build your `jquery.json`.
+
+Next, run the following `grunt` command in the same directory as your `grunt.js`
+file:
 
     grunt jquery-json
 
 If everything was successful, there should now be a `yourplugin.jquery.json`
 manifest file in that same directory, where `yourplugin` is the name of your
 jQuery plugin. All of the fields used by the jQuery Plugin Registry have been
-pulled in from your project's `package.json`.
+pulled in from your `package.json`.
 
 To add or overwrite any fields specific to your `jquery.json`, simply add a
 `jqueryjson` object with the desired values to your Grunt config:
