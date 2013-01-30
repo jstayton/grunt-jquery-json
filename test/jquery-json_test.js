@@ -1,5 +1,3 @@
-/*global describe:true, it:true*/
-
 var grunt = require('grunt');
 
 require('should');
