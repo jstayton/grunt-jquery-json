@@ -23,10 +23,12 @@ module.exports = function (grunt) {
       }
     },
     lint: {
-      files: ['grunt.js', 'tasks/*/*.js'] // test/*.js
+      files: ['grunt.js', 'tasks/**/*.js', 'test/**/*.js']
     },
-    test: {
-      files: ['test/*/*.js']
+    simplemocha: {
+      all: {
+        src: 'test/**/*.js'
+      }
     },
     watch: {
       files: '<config:lint.files>',
@@ -65,8 +67,10 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', 'lint concat'); // test
+  grunt.registerTask('test', 'simplemocha');
+  grunt.registerTask('default', 'lint test concat');
 
   grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-simple-mocha');
 };
