@@ -36,6 +36,9 @@
   "engines": {
     "node": "*"
   },
+  "dependencies": {
+    "grunt": "~0.3.17"
+  },
   "devDependencies": {
     "grunt": "~0.3.17",
     "grunt-bump": "~0.0.1",
