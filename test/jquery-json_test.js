@@ -1,9 +1,14 @@
-var should = require('should'),
-    grunt = require('grunt');
+/*global describe:true, it:true*/
+
+var grunt = require('grunt');
+
+require('should');
 
 grunt.loadTasks('tasks');
 
 describe('jquery-json', function () {
+  'use strict';
+
   var pkg = require('./fixtures/package.json'),
       config = {};
 
@@ -17,8 +22,8 @@ describe('jquery-json', function () {
 
       it('should require a "pkg" argument', function () {
         (function () {
-          var jqueryJson = grunt.helper('get-jquery-json');
-        }).should.throw();
+          grunt.helper('get-jquery-json');
+        })().should.throwError();
       });
 
       it('should not require a "config" argument', function () {
