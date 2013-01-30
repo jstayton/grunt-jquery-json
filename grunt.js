@@ -62,10 +62,6 @@ module.exports = function (grunt) {
         // Environment
         node: true,
         es5: true
-      },
-      globals: {
-        describe: true,
-        it: true
       }
     }
   });

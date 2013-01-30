@@ -1,3 +1,6 @@
+/*jshint immed:false*/
+/*global describe:true, it:true*/
+
 var grunt = require('grunt');
 
 require('should');
@@ -21,7 +24,7 @@ describe('jquery-json', function () {
       it('should require a "pkg" argument', function () {
         (function () {
           grunt.helper('get-jquery-json');
-        })().should.throwError();
+        }).should.throwError();
       });
 
       it('should not require a "config" argument', function () {
