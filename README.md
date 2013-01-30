@@ -44,13 +44,13 @@ jQuery plugin. All of the fields used by the jQuery Plugin Registry have been
 pulled in from your project's `package.json`.
 
 To add or overwrite any fields specific to your `jquery.json`, simply add a
-`jquery-json` object with the desired values to your Grunt config:
+`jqueryjson` object with the desired values to your Grunt config:
 
     grunt.initConfig({
       ...
-      'jquery-json': {
+      jqueryjson: {
         dependencies: {
-          'jquery': '>=1.4.3'
+          jquery: '>=1.4.3'
         },
         docs: 'https://github.com/jstayton/jquery-plugin/blob/master/README.md',
         demo: 'http://jstayton.github.com/jquery-plugin'
@@ -63,9 +63,9 @@ disposal:
 *   `get-jquery-json` returns the manifest as an object.
 *   `write-jquery-json` writes the manifest to the `jquery.json` file.
 
-Both accept the `pkg` object and `jquery-json` config object as parameters:
+Both accept the `pkg` object and `jqueryjson` config object as parameters:
 
-    grunt.helper('get-jquery-json', grunt.config('pkg'), grunt.config('jquery-json'));
+    grunt.helper('get-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
 
 Feedback
 --------

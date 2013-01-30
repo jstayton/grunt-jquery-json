@@ -44,14 +44,14 @@ module.exports = function (grunt) {
       };
 
   // Task that generates a jquery.json file from package.json.
-  grunt.registerTask('jquery-json', 'Generates a jquery.json file from package.json.', function () {
+  grunt.registerTask('jquery-json', 'Generates a jquery.json manifest file from package.json.', function () {
     this.requiresConfig('pkg');
 
-    grunt.helper('write-jquery-json', grunt.config('pkg'), grunt.config('jquery-json'));
+    grunt.helper('write-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
   });
 
   // Helper that returns the package manifest as an object. Uses a combination
-  // of package.json and 'jquery-json' config values.
+  // of package.json and 'jqueryjson' config values.
   grunt.registerHelper('get-jquery-json', function (pkg, config) {
     var jqueryJson = {};
 
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
       }
     });
 
-    // Loop over all of the 'jquery-json' config fields and add those that
+    // Loop over all of the 'jqueryjson' config fields and add those that
     // jquery.json uses. This allows for values not specified in 'pkg'.
     if (isObjectObject(config)) {
       Object.keys(config).forEach(function (field) {
