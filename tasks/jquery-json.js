@@ -1,5 +1,5 @@
 /*!
- * grunt-jquery-json v0.1.0
+ * grunt-jquery-json v0.2.0
  *
  * Grunt plugin that builds and validates a jquery.json package manifest.
  *
