@@ -1,6 +1,6 @@
 {
   "name": "grunt-jquery-json",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Grunt plugin that builds and validates a jquery.json package manifest.",
   "keywords": [
     "gruntplugin",
@@ -37,7 +37,8 @@
     "node": "*"
   },
   "dependencies": {
-    "grunt": "~0.3.17"
+    "grunt": "~0.3.17",
+    "semver": "~1.1.2"
   },
   "devDependencies": {
     "grunt": "~0.3.17",
