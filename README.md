@@ -118,7 +118,7 @@ Helpers
 
     _Example:_
 
-       grunt.helper('build-jquery-json-file', grunt.config('pkg'), grunt.config('jqueryjson'));
+        grunt.helper('build-jquery-json-file', grunt.config('pkg'), grunt.config('jqueryjson'));
 
 *   **validate-jquery-json**
 
