@@ -3,9 +3,9 @@ grunt-jquery-json
 
 [![Build Status](https://travis-ci.org/jstayton/grunt-jquery-json.png?branch=master)](https://travis-ci.org/jstayton/grunt-jquery-json)
 
-[Grunt](http://gruntjs.com) plugin that generates a jquery.json manifest file
-from package.json. jquery.json manifest files are used by the
-[jQuery Plugin Registry](http://plugins.jquery.com) to identify jQuery plugins.
+[Grunt](http://gruntjs.com) plugin that builds and validates a jquery.json
+package manifest, which is used by the [jQuery Plugin Registry](http://plugins.jquery.com)
+to identify jQuery plugins.
 
 *   [Release Notes](https://github.com/jstayton/grunt-jquery-json/wiki/Release-Notes)
 
@@ -68,15 +68,91 @@ To add or overwrite any fields specific to your `jquery.json`, simply add a
       }
     });
 
-In addition to the `jquery-json` task, there are also two helpers at your
-disposal:
+In addition to the `jquery-json` task, there is a `validate-jquery-json` task
+for validation only, as well as various helper methods.
 
-*   `get-jquery-json` returns the manifest as an object.
-*   `write-jquery-json` writes the manifest to the `jquery.json` file.
+Tasks
+-----
 
-Both accept the `pkg` object and `jqueryjson` config object as parameters:
+*   **jquery-json**
 
-    grunt.helper('get-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
+    Builds and validates a jquery.json package manifest file from package.json
+    and `jqueryjson` config values.
+
+*   **validate-jquery-json**
+
+    Validates a jquery.json package manifest file in the directory where
+    grunt.js resides.
+
+Helpers
+-------
+
+*   **build-jquery-json**
+
+    Builds a package manifest using a combination of package.json and
+    `jqueryjson` config values.
+
+    _Parameters:_
+
+    *   **pkg** _object_ package.json values.
+    *   **config** _object_, _null_ `jqueryjson` config values.
+    *   **stringify** _boolean_ Whether to JSON stringify.
+
+    _Returns:_ _object_ or _JSON_ encoded package manifest.
+
+    _Example:_
+
+        grunt.helper('build-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
+
+*   **build-jquery-json-file**
+
+    Builds and writes a package manifest to a jquery.json file using a
+    combination of package.json and `jqueryjson` config values.
+
+    _Parameters:_
+
+    *   **pkg** _object_ package.json values.
+    *   **config** _object_, _null_ `jqueryjson` config values.
+
+    _Returns:_ _boolean_ of whether the file was written.
+
+    _Example:_
+
+       grunt.helper('build-jquery-json-file', grunt.config('pkg'), grunt.config('jqueryjson'));
+
+*   **validate-jquery-json**
+
+    Validates a package manifest.
+
+    _Parameters:_
+
+    *   **manifest** _JSON_ Package manifest to validate.
+    *   **log** _boolean_ Whether to output the results to the console.
+
+    _Returns:_ _true_ if valid, _object_ if invalid, with each invalid field as
+               a key and an array of errors as the value.
+
+    _Example:_
+
+        grunt.helper('validate-jquery-json', manifest, false);
+
+*   **validate-jquery-json-file**
+
+    Validates a jquery.json package manifest file.
+
+    _Parameters:_
+
+    *   **fileName** _string_, _null_ File name to read and validate, _null_ to
+                                      look in directory where grunt.js resides.
+    *   **log** _boolean_ Whether to output the results to the console.
+
+    _Returns:_ _true_ if valid, _object_ if invalid, with each invalid field as
+               a key and an array of errors as the value. _false_ if no file or
+               more than one was found.
+
+    _Example:_
+
+        grunt.helper('validate-jquery-json-file', 'yourplugin.jquery.json', false);
 
 Feedback
 --------
