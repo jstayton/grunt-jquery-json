@@ -24,11 +24,15 @@ In the same directory as your project's `grunt.js` file, install the package via
 
 Then load the `jquery-json` task in your `grunt.js` file:
 
-    grunt.loadNpmTasks('grunt-jquery-json');
+```javascript
+grunt.loadNpmTasks('grunt-jquery-json');
+```
 
 And, optionally, add it to the `default` task (or any other):
 
-    grunt.registerTask('default', '[...] jquery-json');
+```javascript
+grunt.registerTask('default', '[...] jquery-json');
+```
 
 Getting Started
 ---------------
@@ -36,10 +40,12 @@ Getting Started
 To start, make sure your `grunt.js` file has a `pkg` config object that has
 loaded `package.json`:
 
-    grunt.initConfig({
-      pkg: '<json:package.json>',
-      ...
-    });
+```javascript
+grunt.initConfig({
+  pkg: '<json:package.json>',
+  ...
+});
+```
 
 This is a standard Grunt practice, and `grunt-jquery-json` uses this `pkg`
 config object to build your `jquery.json`.
@@ -57,16 +63,18 @@ pulled in from your `package.json`.
 To add or overwrite any fields specific to your `jquery.json`, simply add a
 `jqueryjson` object with the desired values to your Grunt config:
 
-    grunt.initConfig({
-      ...
-      jqueryjson: {
-        dependencies: {
-          jquery: '>=1.4.3'
-        },
-        docs: 'https://github.com/jstayton/jquery-plugin/blob/master/README.md',
-        demo: 'http://jstayton.github.com/jquery-plugin'
-      }
-    });
+```javascript
+grunt.initConfig({
+  ...
+  jqueryjson: {
+    dependencies: {
+      jquery: '>=1.4.3'
+    },
+    docs: 'https://github.com/jstayton/jquery-plugin/blob/master/README.md',
+    demo: 'http://jstayton.github.io/jquery-plugin'
+  }
+});
+```
 
 In addition to the `jquery-json` task, there is a `validate-jquery-json` task
 for validation only, as well as various helper methods.
@@ -102,7 +110,9 @@ Helpers
 
     _Example:_
 
-        grunt.helper('build-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
+    ```javascript
+    grunt.helper('build-jquery-json', grunt.config('pkg'), grunt.config('jqueryjson'));
+    ```
 
 *   **build-jquery-json-file**
 
@@ -118,7 +128,9 @@ Helpers
 
     _Example:_
 
-        grunt.helper('build-jquery-json-file', grunt.config('pkg'), grunt.config('jqueryjson'));
+    ```javascript
+    grunt.helper('build-jquery-json-file', grunt.config('pkg'), grunt.config('jqueryjson'));
+    ```
 
 *   **validate-jquery-json**
 
@@ -134,7 +146,9 @@ Helpers
 
     _Example:_
 
-        grunt.helper('validate-jquery-json', manifest, false);
+    ```javascript
+    grunt.helper('validate-jquery-json', manifest, false);
+    ```
 
 *   **validate-jquery-json-file**
 
@@ -152,7 +166,9 @@ Helpers
 
     _Example:_
 
-        grunt.helper('validate-jquery-json-file', 'yourplugin.jquery.json', false);
+    ```javascript
+    grunt.helper('validate-jquery-json-file', 'yourplugin.jquery.json', false);
+    ```
 
 Feedback
 --------
