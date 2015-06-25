@@ -1,3 +1,7 @@
+**NOTICE:** _This plugin is deprecated and no longer maintained. There is no
+longer use for it now that the [jQuery Plugin Registry](http://plugins.jquery.com)
+is itself deprecated and in read-only mode._
+
 grunt-jquery-json
 =================
 
