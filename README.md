@@ -1,4 +1,4 @@
-**NOTICE:** _This plugin is deprecated and no longer maintained. There is no
+**NOTICE:** _This project is deprecated and no longer maintained. There is no
 longer use for it now that the [jQuery Plugin Registry](http://plugins.jquery.com)
 is itself deprecated and in read-only mode._
 
@@ -179,7 +179,7 @@ Feedback
 
 Please open an issue to request a feature or submit a bug report. Or even if
 you just want to provide some feedback, I'd love to hear. I'm also available on
-Twitter as [@jstayton](http://twitter.com/jstayton).
+Twitter as [@kidjustino](https://twitter.com/kidjustino).
 
 Contributing
 ------------
